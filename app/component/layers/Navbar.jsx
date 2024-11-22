@@ -1,11 +1,11 @@
+"use client"
 import React, { useState } from 'react'
 import Container from '../layers/Container'
-// import logo from '../../../public/SoulSpace.png'
-import logo from '/logo.png'
-import { NavLink } from 'react-router-dom'
+import logo from '@/public/logo.png'
 import Li from './Li'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import Link from 'next/link'
 
 
 
@@ -22,15 +22,15 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row items-center w-full">
 
             <div className="flex items-center justify-between w-full md:block md:w-auto">
-              <NavLink to='/'>
+              <Link href='/'>
                 <img src={logo} alt="aa" />
-              </NavLink>
+              </Link>
               <div className="hamburger md:hidden">
-                <NavLink className='bg-red-200' onClick={handler} to='/'>
+                <Link href='#' className='bg-red-200' onClick={handler} to='/'>
                   {
                     show ? <IoCloseSharp /> : <GiHamburgerMenu />
                   }
-                </NavLink>
+                </Link>
               </div>
             </div>
 
